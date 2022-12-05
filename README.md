@@ -43,7 +43,7 @@ We got data gyms and gyms' google review from "Google API" and "Outscraper".
 
 2. Sentiment Analysis 
 [Procedures]
-  2.1 Getting sentiment scores(Positive/Negative/Neutral/Compound) by each reviews
+  2.1 Getting sentiment scores(Positive/Negative/Neutral/Compound) by each reviews  
   2.2 Mean and Standard Deviation of sentiment scores by each places
   
 -	We used **NLTK.Vader** package to get sentiment scores by each reviews
