@@ -34,3 +34,15 @@ def count_each(Each_place_words):
         count_each_place[e] = Counter(Each_place_words[e]).most_common()
     each_place_data = pd.DataFrame(list(count_each_place.items()),columns=['place_id','frequent words'])
     return each_place_data
+
+'''
+    Input: words in each gender
+    Output: countdata in gender
+'''
+
+def count_each_gender(Each_gender_words):
+    count_each_gender = dict()
+    each_gender_data = pd.DataFrame()
+    for e in Each_gender_words:
+        count_each_gender[e] = Counter(Each_gender_words[e]).most_common()
+    each_gender_data_temp = pd.DataFrame(list(count_each_gender.items())).T
