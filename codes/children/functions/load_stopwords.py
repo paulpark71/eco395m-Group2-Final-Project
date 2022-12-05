@@ -1,10 +1,12 @@
 import re
 
-'''
+
+
+def load_stopwords(Stopwords_Path, Additional_Stopwords_Path):
+    '''
     Input: Stoprwords_path and Additional_Stopwords_path
     Ouput: Stopwords(data)
-'''
-def load_stopwords(Stopwords_Path, Additional_Stopwords_Path):
+    '''
     '''1. Stopwords file'''
     with open(Stopwords_Path, 'r',encoding='utf8') as file:
         liststopword=file.readlines()
