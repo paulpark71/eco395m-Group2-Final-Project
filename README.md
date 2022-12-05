@@ -27,9 +27,9 @@ We paid $10 money to use the outscaper, but you need to pay more money if you wa
 ### Methodology
 [Procedures]
 1. Word count
-  1.1 All word count
-  1.2 word count by each places
-  1.3 word count by each genders
+  * 1.1 All word count
+  * 1.2 word count by each places
+  * 1.3 word count by each genders
    - We used **NLTK.tokenizer** package to divide each reviews into the tokens(1.1-1.3)
    - Next, we excluded stopwords and additional stopwords in the tokens(1.1-1.3)
    - Counting all of tokens(1.1)
@@ -42,11 +42,11 @@ We paid $10 money to use the outscaper, but you need to pay more money if you wa
 
 2. Sentiment Analysis
 [Procedures]
-	2.1 Getting sentiment scores(Positive/Negative/Neutral/Compound) by each reviews  
-	2.2 Mean and Standard Deviation of sentiment scores by each places
-		We used **NLTK.Vader** package to get sentiment scores by each reviews
-  	We pushed each reviews into vader_analyzer function by NLTK.Vader package and got scores
-  	After that, we also got the mean and the standard deviation of these scores by each places
+    * 2.1 Getting sentiment scores(Positive/Negative/Neutral/Compound) by each reviews  
+    * 2.2 Mean and Standard Deviation of sentiment scores by each places
+    	- We used **NLTK.Vader** package to get sentiment scores by each reviews
+  	- We pushed each reviews into vader_analyzer function by NLTK.Vader package and got scores
+  	- After that, we also got the mean and the standard deviation of these scores by each places
 
 [Packages]
 * NLTK: https://www.nltk.org/_modules/nltk/sentiment/vader.html
