@@ -14,7 +14,6 @@ def all_count(All_wordsFiltered):
 '''
     Input: words in each places
     Output: counted data in each places
-
 '''
 def count_each_place(Each_place_words):
     count_each_place = dict()
@@ -46,3 +45,16 @@ def count_each_gender(Each_gender_words):
     for e in Each_gender_words:
         count_each_gender[e] = Counter(Each_gender_words[e]).most_common()
     each_gender_data_temp = pd.DataFrame(list(count_each_gender.items())).T
+
+    for i in range(len(each_gender_data_temp.T)):
+        temp1 = []
+        temp2 = []
+        cname=each_gender_data_temp[i][0]
+        cname2=''
+        for e in each_gender_data_temp[i][1]:
+            temp1.append(e[0])
+            temp2.append(e[1])
+        temp1S = pd.Series(temp1.copy(),name=cname)
+        temp2S = pd.Series(temp2.copy(),name=cname2)
+        each_gender_data=pd.concat([each_gender_data,temp1S,temp2S], axis = 1)
+    return each_gender_data
