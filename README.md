@@ -40,13 +40,13 @@ We paid $10 money to use the outscaper, but you need to pay more money if you wa
 * NLTK: https://www.nltk.org/index.html
 * gender guesser: https://pypi.org/project/gender-guesser/
 
-2. Sentiment Analysis 
+2. Sentiment Analysis
 [Procedures]
-_2.1 Getting sentiment scores(Positive/Negative/Neutral/Compound) by each reviews  
-_2.2 Mean and Standard Deviation of sentiment scores by each places
-__- We used **NLTK.Vader** package to get sentiment scores by each reviews
-__- We pushed each reviews into vader_analyzer function by NLTK.Vader package and got scores
-__- After that, we also got the mean and the standard deviation of these scores by each places
+ 2.1 Getting sentiment scores(Positive/Negative/Neutral/Compound) by each reviews  
+ 2.2 Mean and Standard Deviation of sentiment scores by each places
+  We used **NLTK.Vader** package to get sentiment scores by each reviews
+  We pushed each reviews into vader_analyzer function by NLTK.Vader package and got scores
+  After that, we also got the mean and the standard deviation of these scores by each places
 
 [Packages]
 * NLTK: https://www.nltk.org/_modules/nltk/sentiment/vader.html
