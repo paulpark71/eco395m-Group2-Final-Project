@@ -22,3 +22,13 @@ def sentiment_analysis(dataset):
             score = dict({'neg': np.nan, 'neu': np.nan, 'pos': np.nan, 'compound': np.nan})
             score['place_id'] = sentences[i][0]
             result.append(score)
+
+    i = 0
+    df = pd.DataFrame()
+
+    for i,e in enumerate(result):
+        x = pd.DataFrame.from_dict(result[i], orient='index').T
+        df = pd.concat([df,x], ignore_index=True)
+    df.set_index('place_id')
+    dd = df.dropna()
+    return dd
