@@ -12,7 +12,6 @@ Sentimental_data_CSV_PATH = os.path.join(BASE_DIR,'store', 'sentimental_data.csv
 Summary_sentimental_PATH = os.path.join(BASE_DIR, 'senti_plus_count_basic.csv')
 Reviewr_PATH = os.path.join(BASE_DIR, 'reviewer_r.csv')
 
-
 dataset = pd.read_csv(Reveiws_CSV_PATH)
 dd = sentiment_analysis(dataset)
 df = review_gender(dataset)
