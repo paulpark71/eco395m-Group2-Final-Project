@@ -50,6 +50,7 @@ We placed Google place id into outscraper to get up to 250 reviews
 **1.1 All word count(all count)**
 - Counting: the frequency of words in the all reviews dataset
 - Output: This result is in the "all count.csv" in the artifacts
+
 **1.2 Word count by each places(count_each_place.py)**
 - Counting all of the frequency of words by each places in the all reviews dataset
 - Output: This result is in the "countall count.csv" in the store
