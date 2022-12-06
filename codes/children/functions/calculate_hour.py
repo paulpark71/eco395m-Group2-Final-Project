@@ -1,10 +1,8 @@
-"""
+def calculate_hour(weekday):
+    """
     Input: dataset on business hours in a week
     Output: total business hours in a week
-"""
-
-
-def calculate_hour(weekday):
+    """
     business_hours = [0, 0, 0, 0, 0, 0, 0]
     total = 0
     weeklist = [
