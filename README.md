@@ -11,7 +11,7 @@ The main goal of our project is to analyze reviews of different gyms in Austin. 
 
 We collected gym data and their Google reviews using 1."Google Places API" and 2."Outscraper".
 
-1. Google Map API(googlemap.py)
+**1. Google Map API(googlemap.py)**
 - First, before using Google Map API, we go to the Google Cloud Platform and make valid Googe Map API to get its API key
 - Insert google api key and query(search words:"**gym near Travis County, TX**") into the googlemap.py
 - A. Scrape 60 gym data(**google place id, name, address, latitude, longitude, rating, rating_total**.) from Google Map API(function:get_information_map)
@@ -19,7 +19,7 @@ We collected gym data and their Google reviews using 1."Google Places API" and 2
 - Create csv fies(result_place_id.csv, result_detail.csv) that includes A and B above and Intergrate them into **basic.csv** in the store directory
 
 
-2. Google Review Data (from Outscraper Website/API)
+**2. Google Review Data (from Outscraper Website/API)**
 - Outscraper(https://outscraper.com/) is the website we used get reivews datafrom Google Maps (you can also use their API).
 - We plugged in google place id that we collected from Google Places API into Outscraper and was able to collect reviews of each gyms up to 250 recent reviews (**reviews.csv in the data directory **).
     - We resorted to using Outscraper because Google Places API only allowed us to scrape up to five reviews per location as an individual(non-buseinss) user.
@@ -39,22 +39,21 @@ We placed Google place id into outscraper to get up to 250 reviews
 * Other outputs are under the store directory in the artifacts
 * We used pandas package to read and write csv files 
 
-[Procedures]
-1. Word count Analysis(wordcount.py, tokenized_without_stopwords)
+**1. Word count Analysis(wordcount.py)**
     [Setup]
     - Reading: Read review.csv from Outscraper in the directory
     - Dividen: Used **NLTK.tokenizer** package to divide each reviews into each words
-    - Cleaning: Excluded stopwords and additional stopwords from dividen words
+    - Cleaning: Excluded stopwords and additional stopwords from dividen words(function:tokenized_without_stopwords.py)
         * stopwords is words in the stopwords.txt of the data directory and it is the same as stuff of shakespire homework
         * additional stop words in the additional_stop_words.txt that we added some words for this analysis
     - Getting: getting data for this analysis
-1.1 All word count(all count)
+**1.1 All word count(all count)**
     - Counting: the frequency of words in the all reviews dataset
     - Output: This result is in the "all count.csv" in the artifacts
-- 1.2 Word count by each places(count_each_place.py)
+**1.2 Word count by each places(count_each_place.py)**
     - Counting all of the frequency of words by each places in the all reviews dataset
     - Output: This result is in the "countall count.csv" in the store
-- 1.3 Word count by each genders(count_each_gender.py)  with **gender guesser** package
+**1.3 Word count by each genders(count_each_gender.py)  with *gender guesser* package**
     - Counting all of the frequency of words by each places in the all reviews dataset
     - Output: This result is in the "review_data.csv" in the store
 
@@ -68,13 +67,23 @@ We placed Google place id into outscraper to get up to 250 reviews
 * NLTK: https://www.nltk.org/index.html
 * gender guesser: https://pypi.org/project/gender-guesser/
 
-2. Sentiment Analysis
-[Procedures]
-    * 2.1 Getting sentiment scores(Positive/Negative/Neutral/Compound) by each reviews  
-    * 2.2 Mean and Standard Deviation of sentiment scores by each places
-        - We used **NLTK.Vader** package to get sentiment scores by each reviews
-        - We pushed each reviews into vader_analyzer function by NLTK.Vader package and got scores
-        - After that, we also got the mean and the standard deviation of these scores by each places
+**2. Sentiment Analysis(sentiment.py)**
+
+**2.1 Sentiment score by each reviews(sentiment_analysis.py)**
+    - Reading: Read review.csv from Outscraper in the directory
+    - Scoring: Putting each reviews into the function **SentimentIntensityAnalyzer of NLTK Vader** package to get scores(Positive/Negative/Neutral/Compound)
+    - Output: This result is in the "sentimental_data.csv" in the store
+* Positive: positive word's score by each reviews
+* Negative: negative word's score by each reviews
+* Netural : netutral word's score by each reviews
+* Compound: compound score by each reviews
+
+**2.2 Mean and Standard Deviation of sentiment scores by each places**
+    - Mean/Standard Deviation: We also got the mean and the standard deviation of these scores by *each places*
+    - Output: This result is in the "senti_plus_count_basic" in the artifacts with being integrated with other results
+
+**2.3 CreatingReview_r**
+    - The sentment.py includes after reading reviews.csv, we create **review_r.csv** added to gender guesser from author title in the reveiw.csv.
 
 [Packages]
 * NLTK: https://www.nltk.org/_modules/nltk/sentiment/vader.html
