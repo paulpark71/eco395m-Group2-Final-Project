@@ -102,3 +102,8 @@ All of our plots and figurese in our findings were created via Tableau. We conve
 
 
 ### Reproducibility
+Set the current directory to the top of the repo (same place where this README.md is located).
+Before executing the code, install requirement.txt or packages if you do not have them already, by running "pip3 install -r requirements.txt"
+Open the main.py under the directory of the code and execute it. (main.py executes these python files automatically: 1. googlemap, 2. wordcount, 3. sentiment, which have some functions in the functions directory)
+After running the above code, you can get three main csv files(all_count, review_r, senti_plus_count_basic) in the artifacts directory.
+
