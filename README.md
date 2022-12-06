@@ -79,24 +79,27 @@ All of our plots and figurese in our findings were created via Tableau. We conve
     ![](plots/Gym_Distribution.jpeg)
 
 - Bar Chart Showing Total Word Count
-    ![](plots/Bar_Chart_For_Words.jpeg)
+    ![](plots/Bar_Chart_for_Word.png)
 
-- Bar Chart Showing Word Count - Male
-    ![](plots/Bubble_Map_For_Male.jpeg)
+- Gender Ratio
+    ![](plots/male_female_review_ratio.png)
 
-- Bar Chart Showing Word Count - Female
-    ![](plots/Bubble_Map_for_Female.jpeg)
+- Bubble Map Showing Word Count - Male
+    ![](plots/Bubble_Map_for_Male.png)
 
-- NEED TO REVIEW
-    ![](plots/Regression_Between_Rating_and_BusinessHour.png)
+- Bubble Map Showing Word Count - Female
+    ![](plots/Bubble_Map_for_Female.png)
+
+- Sentiment Analysis
+    ![](plots/Ratio_of_Sentiment_Analysis.png)
+
+- Sentiment Analysis and Google Reviews
+    ![](plots/Relationship_Between_Counmpound_Mean_and_Google_Rating.png)
 
 - Google Ratings and Business Hour
     ![](plots/Relationship_Between_GoogleRating_and_Business_Hour.jpeg)
 
--GOOGLE RATINGS AND VADER COMPOUND MEAN?
 
--PIE CHART SHOWING MALE VS FEMALE?
--PIE CHART SHOWING ZIPCODE?
 
 
 ### Limitations
