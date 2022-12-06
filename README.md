@@ -28,16 +28,26 @@ We collected gym data and their Google reviews using 1."Google Places API" and 2
 ## Analysis
 
 ### Methodology
+* Main outputs are under the artifacts directory
+* Other outputs are under the store directory in the artifacts
+* We used pandas package to read and write csv files 
+
 [Procedures]
-1. Word count
-     * 1.1 All word count
-     * 1.2 word count by each places
-     * 1.3 word count by each genders
-        - We used **NLTK.tokenizer** package to divide each reviews into the tokens(1.1-1.3)
-        - Next, we excluded stopwords and additional stopwords in the tokens(1.1-1.3)
-        - Counting all of tokens(1.1)
-        - Counting all of tokens by each places(1.2)
-        - Counting all of tokens by each gender(1.3) with **gender guesser** package
+1. Word count Analysis(wordcount.py, tokenized_without_stopwords)
+    [Setup]
+    - Reading: Read review.csv from Outscraper in the directory
+    - Dividen: Used **NLTK.tokenizer** package to divide each reviews into each words
+    - Cleaning: Excluded stopwords and additional stopwords from dividen words
+        * stopwords is words in the stopwords.txt of the data directory and it is the same as stuff of shakespire homework
+        * additional stop words in the additional_stop_words.txt that we added some words for this analysis
+    - Getting: getting data for this analysis
+1.1 All word count(all count)
+    - Counting: the frequency of words in the all reviews dataset
+    - Output: This result is in the "all count.csv" in the artifacts
+- 1.2 Word count by each places(count_each_place.py)
+    - Counting all of the frequency of words by each places in the all reviews dataset
+    - Output: This result is in the "countall count.csv" in the store
+- 1.3 Word count by each genders(count_each_gender.py)  with **gender guesser** package
 
 [Packages]
 * NLTK: https://www.nltk.org/index.html
