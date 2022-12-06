@@ -11,9 +11,13 @@ The main goal of our project is to analyze reviews of different gyms in Austin. 
 
 We collected gym data and their Google reviews using 1."Google Places API" and 2."Outscraper".
 
-1. Google Places API
-- Scrape 60 gym data(google place id, address, latitude, longitude, etc.) from Google Places API
-- Query(Searching words) used: ***Gym near Travis county***
+1. Google Map API(googlemap.py)
+- First, before using Google Map API, we go to the Google Cloud Platform and make valid Googe Map API to get its API key
+- Insert google api key and query(search words:"**gym near Travis County, TX**") into the googlemap.py
+- A. Scrape 60 gym data(**google place id, name, address, latitude, longitude, rating, rating_total**.) from Google Map API(function:get_information_map)
+- B. Getting details gyms data and calculated business hour that we need to analyze(**weekday, Total Business hour**) from Google Map API(function: detail,calculate_hour)
+- Create csv fies(result_place_id.csv, result_detail.csv) that includes A and B above and Intergrate them into **basic.csv** in the store directory
+
 
 2. Google Review Data (from Outscraper Website/API)
 - Outscraper(https://outscraper.com/) is the website we used get reivews data from Google Maps (you can also use their API).
