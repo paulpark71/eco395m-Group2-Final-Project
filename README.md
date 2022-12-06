@@ -20,13 +20,17 @@ We collected gym data and their Google reviews using 1."Google Places API" and 2
 
 
 2. Google Review Data (from Outscraper Website/API)
-- Outscraper(https://outscraper.com/) is the website we used get reivews data from Google Maps (you can also use their API).
-- We plugged in google place id that we collected from Google Places API into Outscraper and was able to collect reviews of each gyms up to 250 recent reviews.
+- Outscraper(https://outscraper.com/) is the website we used get reivews datafrom Google Maps (you can also use their API).
+- We plugged in google place id that we collected from Google Places API into Outscraper and was able to collect reviews of each gyms up to 250 recent reviews (**reviews.csv in the data directory **).
     - We resorted to using Outscraper because Google Places API only allowed us to scrape up to five reviews per location as an individual(non-buseinss) user.
     - Using Outscraper allowed us to scrape up to 250 reviews per gym at an affordable cost.
+    - We got data that includes **reviews, author_title(reviewr's name) and etc.**(we used these two items in this )
 <p align="center">
 <img width="400" height="400" src="data/outscraper.PNG">
+We placed Google place id into outscraper to get up to 250 reviews
 </p>
+
+* Caution!: We got reviews.csv at the end of November based on the Google place id at that time. And, the Google place ids that we can now get are a little different from ones that we got at November. 
 
 ## Analysis
 
@@ -51,6 +55,14 @@ We collected gym data and their Google reviews using 1."Google Places API" and 2
     - Counting all of the frequency of words by each places in the all reviews dataset
     - Output: This result is in the "countall count.csv" in the store
 - 1.3 Word count by each genders(count_each_gender.py)  with **gender guesser** package
+    - Counting all of the frequency of words by each places in the all reviews dataset
+    - Output: This result is in the "review_data.csv" in the store
+
+* What is th gender guesser
+    - It is the package to estimate gender from last name.
+    - We plug last name of each reviwer's name(author title in the review.csv) into gender guesser function
+    - This funtion retuns 5 answers from last name, unknown (name not found), andy (androgynous), male, female, mostly_male, or mostly_female
+    - The difference between andy and unknown is that the former is found to have the same probability to be male than to be female, while the later means that the name wasn’t found in the gender guesser's database.
 
 [Packages]
 * NLTK: https://www.nltk.org/index.html
