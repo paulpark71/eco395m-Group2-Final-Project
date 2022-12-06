@@ -25,11 +25,11 @@ key =""
 
     
 def tokenized_without_stopwords(dataset,Stopwords_Path, Additional_Stopwords_Path ):
+    '''
+        Input: dataset, dictionary of stopwords path, that of additional stopwords path
+        Ouput: dataset on tokenized without stopwords
+    '''
     for i,e in enumerate(dataset['review_text']):
-    '''
-    Input: dataset, dictionary of stopwords path, that of additional stopwords path
-    Ouput: dataset on tokenized without stopwords
-    '''
         if e=="":
             dataset['review_text'][i]= ""
     dataset =dataset.dropna(subset = ['review_text']).reset_index(drop=True)
