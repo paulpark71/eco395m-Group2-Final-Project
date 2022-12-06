@@ -40,12 +40,12 @@ We placed Google place id into outscraper to get up to 250 reviews
 * We used pandas package to read and write csv files 
 
 **1. Word count Analysis(wordcount.py)**
-    - Reading: Read review.csv from Outscraper in the directory
-    - Dividen: Used **NLTK.tokenizer** package to divide each reviews into each words
-    - Cleaning: Excluded stopwords and additional stopwords from dividen words(function:tokenized_without_stopwords.py)
-        * stopwords is words in the stopwords.txt of the data directory and it is the same as stuff of shakespire homework
-        * additional stop words in the additional_stop_words.txt that we added some words for this analysis
-    - Getting: getting data for this analysis
+- Reading: Read review.csv from Outscraper in the directory
+- Dividen: Used **NLTK.tokenizer** package to divide each reviews into each words
+- Cleaning: Excluded stopwords and additional stopwords from dividen words(function:tokenized_without_stopwords.py)
+    * stopwords is words in the stopwords.txt of the data directory and it is the same as stuff of shakespire homework
+    * additional stop words in the additional_stop_words.txt that we added some words for this analysis
+- Getting: getting data for this analysis
 **1.1 All word count(all count)**
     - Counting: the frequency of words in the all reviews dataset
     - Output: This result is in the "all count.csv" in the artifacts
@@ -69,9 +69,9 @@ We placed Google place id into outscraper to get up to 250 reviews
 **2. Sentiment Analysis(sentiment.py)**
 
 **2.1 Sentiment score by each reviews(sentiment_analysis.py)**
-    - Reading: Read review.csv from Outscraper in the directory
-    - Scoring: Putting each reviews into the function **SentimentIntensityAnalyzer of NLTK Vader** package to get scores(Positive/Negative/Neutral/Compound)
-    - Output: This result is in the "sentimental_data.csv" in the store
+- Reading: Read review.csv from Outscraper in the directory
+- Scoring: Putting each reviews into the function **SentimentIntensityAnalyzer of NLTK Vader** package to get scores(Positive/Negative/Neutral/Compound)
+- Output: This result is in the "sentimental_data.csv" in the store
 * Positive: positive word's score by each reviews
 * Negative: negative word's score by each reviews
 * Netural : netutral word's score by each reviews
