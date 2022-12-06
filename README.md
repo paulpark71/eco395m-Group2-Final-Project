@@ -40,7 +40,6 @@ We placed Google place id into outscraper to get up to 250 reviews
 * We used pandas package to read and write csv files 
 
 **1. Word count Analysis(wordcount.py)**
-    [Setup]
     - Reading: Read review.csv from Outscraper in the directory
     - Dividen: Used **NLTK.tokenizer** package to divide each reviews into each words
     - Cleaning: Excluded stopwords and additional stopwords from dividen words(function:tokenized_without_stopwords.py)
