@@ -47,14 +47,14 @@ We placed Google place id into outscraper to get up to 250 reviews
     * additional stop words in the additional_stop_words.txt that we added some words for this analysis
 - Getting: getting data for this analysis
 **1.1 All word count(all count)**
-    - Counting: the frequency of words in the all reviews dataset
-    - Output: This result is in the "all count.csv" in the artifacts
+- Counting: the frequency of words in the all reviews dataset
+- Output: This result is in the "all count.csv" in the artifacts
 **1.2 Word count by each places(count_each_place.py)**
-    - Counting all of the frequency of words by each places in the all reviews dataset
-    - Output: This result is in the "countall count.csv" in the store
+- Counting all of the frequency of words by each places in the all reviews dataset
+- Output: This result is in the "countall count.csv" in the store
 **1.3 Word count by each genders(count_each_gender.py)  with *gender guesser* package**
-    - Counting all of the frequency of words by each places in the all reviews dataset
-    - Output: This result is in the "review_data.csv" in the store
+- Counting all of the frequency of words by each places in the all reviews dataset
+- Output: This result is in the "review_data.csv" in the store
 
 * What is th gender guesser
     - It is the package to estimate gender from last name.
@@ -72,17 +72,17 @@ We placed Google place id into outscraper to get up to 250 reviews
 - Reading: Read review.csv from Outscraper in the directory
 - Scoring: Putting each reviews into the function **SentimentIntensityAnalyzer of NLTK Vader** package to get scores(Positive/Negative/Neutral/Compound)
 - Output: This result is in the "sentimental_data.csv" in the store
-* Positive: positive word's score by each reviews
-* Negative: negative word's score by each reviews
-* Netural : netutral word's score by each reviews
-* Compound: compound score by each reviews
+    * Positive: positive word's score by each reviews
+    * Negative: negative word's score by each reviews
+    * Netural : netutral word's score by each reviews
+    * Compound: compound score by each reviews
 
 **2.2 Mean and Standard Deviation of sentiment scores by each places**
-    - Mean/Standard Deviation: We also got the mean and the standard deviation of these scores by *each places*
-    - Output: This result is in the "senti_plus_count_basic" in the artifacts with being integrated with other results
+- Mean/Standard Deviation: We also got the mean and the standard deviation of these scores by *each places*
+- Output: This result is in the "senti_plus_count_basic" in the artifacts with being integrated with other results
 
 **2.3 CreatingReview_r**
-    - The sentment.py includes after reading reviews.csv, we create **review_r.csv** added to gender guesser from author title in the reveiw.csv.
+- The sentment.py includes after reading reviews.csv, we create **review_r.csv** added to gender guesser from author title in the reveiw.csv.
 
 [Packages]
 * NLTK: https://www.nltk.org/_modules/nltk/sentiment/vader.html
