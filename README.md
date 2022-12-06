@@ -53,12 +53,35 @@ We collected gym data and their Google reviews using 1."Google Places API" and 2
 
 [Database and Figures]
 
-All of our plots and figurese in our findings were created via Tableau. We converted the gym/review data into PostgresSQL database and created tables. We then connected the SQL database to Tableau and produced below charts and graphs to visualize our findings.
+All of our plots and figurese in our findings were created via Tableau. We converted the gym/review data ('basic.csv,' and 'all_count.csv') into PostgresSQL database and created tables. The two csv files that were used in this step were  We then connected the SQL database to Tableau and produced below charts and graphs to visualize our findings.
 
 ### Description and Findings
 
-- Plot 1 - Bar Chart Showing Word Count
+- Gym Location
+    ![](plots/Gym_Location_Map.jpeg)
+
+- Gym Distribution by Zipcode
+    ![](plots/Gym_Distribution.jpeg)
+
+- Bar Chart Showing Total Word Count
     ![](plots/Bar_Chart_For_Words.jpeg)
+
+- Bar Chart Showing Word Count - Male
+    ![](plots/Bubble_Map_For_Male.jpeg)
+
+- Bar Chart Showing Word Count - Female
+    ![](plots/Bubble_Map_for_Female.jpeg)
+
+- NEED TO REVIEW
+    ![](plots/Regression_Between_Rating_and_BusinessHour.png)
+
+- Google Ratings and Business Hour
+    ![](plots/Relationship_Between_GoogleRating_and_Business_Hour.jpeg)
+
+-GOOGLE RATINGS AND VADER COMPOUND MEAN?
+
+-PIE CHART SHOWING MALE VS FEMALE?
+-PIE CHART SHOWING ZIPCODE?
 
 
 ### Limitations
