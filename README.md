@@ -24,8 +24,9 @@ We collected gym data and their Google reviews using 1."Google Places API" and 2
 - We plugged in google place id that we collected from Google Places API into Outscraper and was able to collect reviews of each gyms up to 250 recent reviews.
     - We resorted to using Outscraper because Google Places API only allowed us to scrape up to five reviews per location as an individual(non-buseinss) user.
     - Using Outscraper allowed us to scrape up to 250 reviews per gym at an affordable cost.
-
-<img align="center" width="400" height="400" src="data/outscraper.PNG">
+<p align="center">
+<img width="400" height="400" src="data/outscraper.PNG">
+</p>
 
 ## Analysis
 
