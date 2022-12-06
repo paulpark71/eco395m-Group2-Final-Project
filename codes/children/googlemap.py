@@ -46,7 +46,6 @@ for e in df["place_id"]:
     dd = dd.append(dd_temp, ignore_index=True)
 
 Detail_CSV_PATH = os.path.join(BASE_DIR, "store", "result_detail.csv")
-os.makedirs(os.path.join(BASE_DIR, "store"), exist_ok=True)
 with open(
     Detail_CSV_PATH, mode="w", newline="", encoding="shift-jis", errors="ignore"
 ) as f:
