@@ -3,13 +3,14 @@ import requests
 import json
 import time
 
-"""
-    Input: query and the key of Google Map API
-    Output: dataset
-"""
+
 
 
 def get_information_map(query, key):
+    """
+    Input: query and the key of Google Map API
+    Output: dataset
+    """
     df_temp = pd.DataFrame(
         {
             "name": [],
