@@ -46,12 +46,14 @@ We placed Google place id into outscraper to get up to 250 reviews
     * stopwords is words in the stopwords.txt of the data directory and it is the same as stuff of shakespire homework
     * additional stop words in the additional_stop_words.txt that we added some words for this analysis
 - Getting: getting data for this analysis
+
 **1.1 All word count(all count)**
 - Counting: the frequency of words in the all reviews dataset
 - Output: This result is in the "all count.csv" in the artifacts
 **1.2 Word count by each places(count_each_place.py)**
 - Counting all of the frequency of words by each places in the all reviews dataset
 - Output: This result is in the "countall count.csv" in the store
+
 **1.3 Word count by each genders(count_each_gender.py)  with *gender guesser* package**
 - Counting all of the frequency of words by each places in the all reviews dataset
 - Output: This result is in the "review_data.csv" in the store
