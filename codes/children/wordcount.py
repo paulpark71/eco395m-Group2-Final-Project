@@ -52,7 +52,6 @@ all_count_data = pd.concat([all_count_data, count_gender_data], axis=1)
 """
    4. Ouput each results to csv.files
 """
-os.makedirs(os.path.join(BASE_DIR, "store"), exist_ok=True)
 with open(
     Count_CSV_PATH, mode="w", newline="", encoding="shift-jis", errors="ignore"
 ) as f:

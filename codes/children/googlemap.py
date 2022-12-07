@@ -8,6 +8,9 @@ query = "gym near Travis County, TX"
 key = ""
 BASE_DIR = "artifacts"
 
+os.makedirs(BASE_DIR, exist_ok=True)
+os.makedirs(os.path.join(BASE_DIR, "store"), exist_ok=True)
+
 
 """
     1. Get Information from Google MAP API
@@ -27,9 +30,8 @@ df.set_index("place_id")
 
 df = get_information_map(query, key)
 
-os.makedirs(os.path.join(BASE_DIR, "store"), exist_ok=True)
 ID_CSV_PATH = os.path.join(BASE_DIR, "store", "result_place_id.csv")
-os.makedirs(BASE_DIR, exist_ok=True)
+
 with open(
     ID_CSV_PATH, mode="w", newline="", encoding="shift-jis", errors="ignore"
 ) as f:

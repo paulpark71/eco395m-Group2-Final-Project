@@ -4,6 +4,10 @@ from .calculate_hour import calculate_hour
 
 
 def detail(id, key):
+    """
+    Input: Google Map place_id and key
+    Output: detailed data by each places
+    """
     params = {
         "key": key,
         "place_id": id,

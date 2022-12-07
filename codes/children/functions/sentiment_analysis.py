@@ -9,6 +9,10 @@ vader_analyzer = SentimentIntensityAnalyzer()
 
 
 def sentiment_analysis(dataset):
+    """
+    Input:dataset
+    Output: scores of sentiment analysis by nltk vader
+    """
     sentences = []
     result = []
     for i, e in enumerate(dataset["review_text"]):

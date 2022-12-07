@@ -38,7 +38,6 @@ std.rename(
 )
 total = pd.merge(mean, std, how="inner", on="place_id")
 
-os.makedirs(os.path.join(BASE_DIR, "store"), exist_ok=True)
 dd.to_csv(Sentimental_data_CSV_PATH, header=True)
 df.to_csv(Reviewr_PATH, header=True)
 count_integrated_data = pd.read_csv(Count_integrated_CSV_PATH, index_col="place_id")
