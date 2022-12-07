@@ -97,7 +97,7 @@ All of our plots and figurese in our findings were created via Tableau. We conve
 ### Description and Findings
 
 - Gym Location
-    ![](plots/Gym_Location_Map1.jpeg)
+    ![](plots/Gym_Location_Map1.png)
 
 1. Many of the gyms are located in  downtown area (agglomeration economies?)
 2. The reason why there're no gym near by campus (a) How google API works (b) new apartment, especially apartment in west campus,  has its own gym
