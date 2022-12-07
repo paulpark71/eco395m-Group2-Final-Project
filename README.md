@@ -21,10 +21,11 @@ We collected gym data and their Google reviews using 1."Google Map API" and 2."O
 
 **2. Google Review Data (from Outscraper Website/API)**
 - Outscraper(https://outscraper.com/) is the website we used get reivews data from Google Maps (you can also use their API).
-- We plugged in google place id that we collected from Google Map API into Outscraper and was able to collect reviews of each gyms up to 250 recent reviews (**reviews.csv in the data directory **).
+- We plugged in google place id that we collected from Google Map API into Outscraper and was able to collect reviews of each gyms up to 250 recent reviews (**resulting output is 'reviews.csv', which we placed in the data directory **).
     - We resorted to using Outscraper because Google Map API only allowed us to scrape up to five reviews per location as an individual(non-buseinss) user.
     - Using Outscraper allowed us to scrape up to 250 reviews per gym at an affordable cost.
     - We got data that includes **reviews, author_title(reviewr's name), etc.**
+    - Output is reviews.csv w
 
 <p align="center">
 <img width="400" height="400" src="data/outscraper.PNG"> <br>
@@ -182,6 +183,7 @@ Lastly, we were curious to see if there are any interesting relationships betwee
 
 ### Limitations
 
+-   As mentioned previously, if one were to scrape gym review data with Outscraper now, the resulting data may be slightly different from ours because of place ids.
 -   We were only able to scrape 60 gyms. If we wanted more, we were required to apply and pay for a business license to retrieve more data.
 -   The gyms we collected data on have Google review ratings from 3.5 to 5. So, gyms with terrible to sub-par reviews (1 to 3) are not included.
 -   Google Map API selected gyms based on the searcher's location. That may have caused most of the gyms on our data to be around downtown area.
