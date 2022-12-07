@@ -1,4 +1,4 @@
-# Group 2 Midterm Project Report
+# Group 2 Final Project Report
 
 ## Goal
 
@@ -59,11 +59,11 @@ If you collect Google place ids now, you may get slightly different data sets fr
 
 **1.2 Word count by each gym (count_each_place.py)**
 - Count the frequency of all words by each gym in the all reviews dataset
-- Output: This result is in the "count_plus_basic.csv" in the store (integrated with basic.csv)
+- Output is "count_plus_basic.csv" in the store directory (integrated with basic.csv)
 
 **1.3 Word count by each genders (count_each_gender.py)  with *gender-guesser* package**
 - Count the frequency of all words by each gym by gender in the all reviews dataset
-- Output: This result is included in the "all_coun.csv" in the artifacts
+- Output is included in the "all_coun.csv" in the artifacts directory
 
 
 * What is the Gender-Guesser package?
@@ -80,7 +80,7 @@ If you collect Google place ids now, you may get slightly different data sets fr
 
 **2.1 Sentiment score by each reviews(sentiment_analysis.py)**
 
-**NLTK.Vader (Valence Aware Dictionary for Sentiment Reasoning)**
+NLTK.Vader (Valence Aware Dictionary for Sentiment Reasoning)
 - Popular Natural Language Processing tool that identifies and extracts sentiment behind texts.
 - Analyzes lexicon, grammatical rules, syntactical conventions to calculate sentiment scores.
 
@@ -90,63 +90,61 @@ If you collect Google place ids now, you may get slightly different data sets fr
     * Positive
     * Negative
     * Netural
-    * Compound: Sum of positive, negative and neutral scores, normalized between -1(most extreme negative) and +1 (most extreme positive)
+    * Compound: Sum of positive, negative and neutral scores, normalized between -1 (most extreme negative) and +1 (most extreme positive)
 
 **2.2 Mean and Standard Deviation of sentiment scores by each places**
 - We also get the mean and the standard deviation of these scores by *each places*
 - Output is the "senti_plus_count_basic" in the artifacts, which is integrated with other results
 
 **2.3 Creating Reviewer_r.csv**
-- The sentment.py includes after reading reviews.csv, we create **review_r.csv** added to gender guesser from author title in the reveiw.csv.
+- Run sentiment.py, which combines the data from reviews.csv and the results from gender-guesser packcage.
+- Output is "reviewer_r.csv"
 
 [Packages]
 * NLTK.Vader: https://www.nltk.org/_modules/nltk/sentiment/vader.html
 
 [Database and Figures]
 
-All of our plots and figurese in our findings were created via Tableau. We converted the gym/review data ('basic.csv,' and 'all_count.csv') into PostgresSQL database and created tables. The two csv files that were used in this step were  We then connected the SQL database to Tableau and produced below charts and graphs to visualize our findings.
+All of our plots and figurese in our findings were created via Tableau. We converted the gym/review data ('basic.csv,' and 'all_count.csv') into PostgresSQL database and created tables. We then connected the SQL database to Tableau and produced below charts and graphs to visualize our analyses.
 
 ### Description and Findings
 
 - Gym Location
     ![](plots/Gym_Location_Map1.png)
 
-1. Many of the gyms are located in  downtown area (agglomeration economies?)
-2. The reason why there're no gym near by campus (a) How google API works (b) new apartment, especially apartment in west campus,  has its own gym
-3.We collect 60 gyms from far west area to south congress 
+The farthest gym returned is near the Oasis at the top left. Most of the gyms are located in the downton area and also below Colorado river. The reasons that there are not many gyms near campus may be:
+
+(a) Google API returns results based on the searcher's location. Our colleague who worked on this lives in downtown area.
+(b) Newer apartments in West Campus most likely have their own community gyms, so the demand for commercial gyms may be less in these areas.
 
 - Gym Distribution by Zipcode
     ![](plots/Gym_Distribution.png)
 
-shows density by zipcode. mostly 78701 (downtown area) and 78704 (just below the Colorado River)
+This map displays concentration of gyms by zipcode. As you can see, most of the gyms are located in zipcode 78701 (downtown area) and 78704 (just below Colorado River).
 
 - Bar Chart Showing Total Word Count
     ![](plots/Bar_Chart_for_Word.png)
 
-The bar chart for total word count: 1.  we ruled out some words like great, awesome, feel, nice, recommend, etc which are relatively meaningless 2. Equipment, Staff, location and time are words been highly mentioned. It also shows what most gym members care about at certain level.
+The bar graph shows the top twenty two words that appeared the most in the Google reviews. We have ruled out some words such as 'great', 'awesome', 'feel', 'nice,' 'recommend', etc which are relatively meaningeless in our analysis. 'Staff', 'equiptment', 'clean', 'friendly' are some of the words that were highly mentioned. This shows what kind of qualities the reviewers most care about.
 
-record top 5
+Top Five Words Mentioned:
 1. staff - 1,187 counts
-2. workout - 1,018
-3. equipment - 947
-4. clean - 829
-5. friendly - 792
+2. workout - 1,018 counts
+3. equipment - 947 counts
+4. clean - 829 counts
+5. friendly - 792 counts
 
-- Gender Ratio
+- Gender Ratio of Reviews
     ![](plots/male_female_review_ratio.png)
 
-we used gender_guesser package which identifies the reviewer's gender based on their first name. It returns 6 different values: unknown (name not found), Andy (androgynous), female, male, mostly_male, or mostly_female. Andy is unisex name, unkown is truly unknwon.
-
-add up male + mostly male 50%
-female + mostly female 30%
-
-mostly male reviewers based on this packcage.
+Based on the gendger-guesser packcage, males (males + mostly_males) make up almost 50% of the reviewers. Females (females + mostly_females) make up around 30%. 20% are unknown. From this, we can find out that the majority of the reviews that we scraped for this analysis are males.
 
 - Bubble Map Showing Word Count - Male
     ![](plots/Bubble_Map_for_Male.png)
 
-dropped off meaningless words simliar to above. repeat wordcount analysis but only males.
+We produced a bubble map showing most frequent words mentioned by males. Similar to the bar graph above, we dropped off meaningless words like 'nice', 'awesome', 'work', 'day', etc.
 
+Top Five Words Mentioned by Males:
 1. staff
 2. equipment
 3. workout
@@ -156,6 +154,7 @@ dropped off meaningless words simliar to above. repeat wordcount analysis but on
 - Bubble Map Showing Word Count - Female
     ![](plots/Bubble_Map_for_Female.png)
 
+Top Five Words Mentioned by Females:
 1. workout
 2. staff
 3. classes
@@ -166,32 +165,26 @@ dropped off meaningless words simliar to above. repeat wordcount analysis but on
 - Sentiment Analysis
     ![](plots/Ratio_of_Sentiment_Analysis.png)
 
-65% neutral
-32% positive
-8% negative
+Out of nearly 7,000 reviews we scraped, around 65% had average neutral sentiment, 32% positive, and 8% negative. From this analysis, we can make an educated guess that many of the reviews express slightly/moderately positive sentiment(eg. "this gym is good"), rather than extremely positive (eg. "THIS GYM IS FREAKIN AWESOME!!!!!").
 
-mostly neutral comments. small negative makes sense because the lowset gym ratings we have is 3.5
+Negative sentiment only makes up 3% of the reviews, and this make sense because out the 60 gyms we collected, the lowest Google rating was 3.5.
 
 - Sentiment Analysis and Google Reviews
     ![](plots/Relationship_Between_Counmpound_Mean_and_Google_Rating.png)
 
-we wanted to see how good of a job vader package does in analyzing sentiment. we compare compound mean (overall score normalized between -1 to 1) with google ratings 0-5.
-
-we can see the two scores positively correlated. higher compound mean likely to have higher google review, vice versa.
+We wanted to see how good of a job NLTK.Vader package does in analyzing sentiment. So, we compared vader's compound mean score (overall sentiment score normalized between -1 to 1) with Google ratings (0-5). We can see the two scores are positively correlated. A gym that has a higher compound mean sentiment score is more likely to have a higher Google review, and vice versa.
 
 - Google Ratings and Business Hour
     ![](plots/Relationship_Between_GoogleRating_and_Business_Hour.jpeg)
 
-1. Common business hour for most gym is around 80 to 100 hours per week
-2. Business hour ranges from 7 hour per week to 24/7
-2. Based on the 60 gym collected, longer business hour (>100 hr) doesn't necessary guarantee higher review rating, as gym with business hour below 100 hr/week have average rating over 4.
+Lastly, we were curious to see if there are any interesting relationships between the Google reviews and how long the gyms are open for. Would gyms that are open longer generally have higher reviews? From above plot, we can see that that the most gyms are open around 80 to 100 hours a week. The range of business hour ranged from 7 hours/week (a local all-around strength training center) to 24/7. Looking at the data, longer business hour (>100 hrs/week) doesn't necessarily guarantee higher reviews. There are many gyms that are open for less than 100 hours/week yet have Google reviews around 4.6-5.
 
 
 ### Limitations
 
 -   We were only able to scrape 60 gyms. If we wanted more, we were required to apply and pay for a business license to retrieve more data.
 -   The gyms we collected data on have Google review ratings from 3.5 to 5. So, gyms with terrible to sub-par reviews (1 to 3) are not included.
--   Google Map API selected gyms based on the searcher's location. That may have caused most of the gyms on our data to be around down town area.
+-   Google Map API selected gyms based on the searcher's location. That may have caused most of the gyms on our data to be around downtown area.
 -   Membership fees, which may be an interesting finding, was not included in our analysis because it would require a much more in-depth and complicated data collection/scraping.
 -   Regarding gender ratio analysis – we have some unknown gender names. Unisex names may have been mis-categorized.
 -   Although some gyms had more than 250 reviews, the version of the Outscraper we utilized was capped at 250. This may have produced incomplete review data.
@@ -199,15 +192,15 @@ we can see the two scores positively correlated. higher compound mean likely to 
 
 ### Extensions
 
--   We could collect more gyms's data. Instead limiting to just Travis county, we could include a bigger location.
+-   We could collect more gyms's data. Instead of limiting to just Travis county, we could include a bigger location.
 -   We could include membership prices into our analysis, which could give us more interesting findings.
--   Using a more advanced techonology, we could include a recommendation/search dashboard based on what gym features one values the most (machine age, price, location, hours, etc)
--   Yelp has 'amenities and more' section, where they list info such as whether staff wear masks, private parking is available, military discount is offered, etc. We could perhaps regress Yelp reviews on these amenities to see if we could observe any interesting correlation between various amenities and ratings. (ex. Private parking is associated with higher rating?)
+-   Using a more advanced technology, we could include a recommendation/search dashboard based on what gym features one values the most (machine age, price, location, hours, etc)
+-   Yelp has 'amenities and more' section, where they list information such as whether staff wear masks, private parking is available, military discount is offered, etc. We could perhaps regress Yelp reviews on these amenities to see if we could observe any interesting correlation between various amenities and ratings. (ex. Private parking is associated with higher review?)
 
 
 ### Reproducibility
 - Set the current directory to the top of the repo (same place where this README.md is located).
 - Before executing the code, install requirement.txt or packages if you do not have them already, by running "pip3 install -r requirements.txt"
 - Open the main.py under the directory of the code and execute it. (main.py executes these python files automatically: 1. googlemap, 2. wordcount, 3. sentiment, which have some functions in the functions directory)
-- After running the above code, you can get three main csv files(all_count, review_r, senti_plus_count_basic) in the artifacts directory.
+- After running the above code, you can get three main csv files(all_count, reviewer_r, senti_plus_count_basic) in the artifacts directory.
 
