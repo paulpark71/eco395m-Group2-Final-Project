@@ -43,7 +43,7 @@ If you collect Google place ids now, you may get slightly different data sets fr
 * We used pandas package to read and write csv files 
 
 **1. Word count Analysis(wordcount.py)**
-- Reading: Read review.csv from Outscraper in the directory
+- Reading: Read review.csv from Outscraper in the data directory
 - Dividing: Used **NLTK.tokenizer** package to break reviews down into separate words
 - Cleaning: Excluded stopwords and additional stopwords from divided words (function:tokenized_without_stopwords.py)
     * stopwords are in the stopwords.txt of the data directory, which we retrieved from the Shakespeare homework
@@ -52,15 +52,15 @@ If you collect Google place ids now, you may get slightly different data sets fr
 
 **1.1 All word count(all count)**
 - Counting: the frequency of words in the all reviews dataset
-- Output: This result is in the "all count.csv" in the artifacts
+- Output: This result is in the "all_count.csv" in the artifacts
 
 **1.2 Word count by each places(count_each_place.py)**
 - Counting all of the frequency of words by each places in the all reviews dataset
-- Output: This result is in the "countall count.csv" in the store
+- Output: This result is in the "count_plus_basic.csv" in the store(integrated with basic.csv)
 
 **1.3 Word count by each genders(count_each_gender.py)  with *gender guesser* package**
 - Counting all of the frequency of words by each places in the all reviews dataset
-- Output: This result is in the "review_data.csv" in the store
+- Output: This result is included in the "all_coun.csv" in the artifacts
 
 * What is th gender guesser
     - It is the package to estimate gender from last name.
