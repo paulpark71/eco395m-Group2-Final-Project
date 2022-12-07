@@ -99,31 +99,80 @@ All of our plots and figurese in our findings were created via Tableau. We conve
 - Gym Location
     ![](plots/Gym_Location_Map.jpeg)
 
+1. Many of the gyms are located in  downtown area (agglomeration economies?)
+2. The reason why there're no gym near by campus (a) How google API works (b) new apartment, especially apartment in west campus,  has its own gym
+3.We collect 60 gyms from far west area to south congress 
+
 - Gym Distribution by Zipcode
-    ![](plots/Gym_Distribution.jpeg)
+    ![](plots/Gym_Distribution.png)
+
+shows density by zipcode. mostly 78701 (downtown area) and 78704 (just below the Colorado River)
 
 - Bar Chart Showing Total Word Count
     ![](plots/Bar_Chart_for_Word.png)
 
+The bar chart for total word count: 1.  we ruled out some words like great, awesome, feel, nice, recommend, etc which are relatively meaningless 2. Equipment, Staff, location and time are words been highly mentioned. It also shows what most gym members care about at certain level.
+
+record top 5
+1. staff - 1,187 counts
+2. workout - 1,018
+3. equipment - 947
+4. clean - 829
+5. friendly - 792
+
 - Gender Ratio
     ![](plots/male_female_review_ratio.png)
+
+we used gender_guesser package which identifies the reviewer's gender based on their first name. It returns 6 different values: unknown (name not found), Andy (androgynous), female, male, mostly_male, or mostly_female. Andy is unisex name, unkown is truly unknwon.
+
+add up male + mostly male 50%
+female + mostly female 30%
+
+mostly male reviewers based on this packcage.
 
 - Bubble Map Showing Word Count - Male
     ![](plots/Bubble_Map_for_Male.png)
 
+dropped off meaningless words simliar to above. repeat wordcount analysis but only males.
+
+1. staff
+2. equipment
+3. workout
+4. clean
+5. friendly
+
 - Bubble Map Showing Word Count - Female
     ![](plots/Bubble_Map_for_Female.png)
+
+1. workout
+2. staff
+3. classes
+4. clean
+5. friendly
+
 
 - Sentiment Analysis
     ![](plots/Ratio_of_Sentiment_Analysis.png)
 
+65% neutral
+32% positive
+8% negative
+
+mostly neutral comments. small negative makes sense because the lowset gym ratings we have is 3.5
+
 - Sentiment Analysis and Google Reviews
     ![](plots/Relationship_Between_Counmpound_Mean_and_Google_Rating.png)
+
+we wanted to see how good of a job vader package does in analyzing sentiment. we compare compound mean (overall score normalized between -1 to 1) with google ratings 0-5.
+
+we can see the two scores positively correlated. higher compound mean likely to have higher google review, vice versa.
 
 - Google Ratings and Business Hour
     ![](plots/Relationship_Between_GoogleRating_and_Business_Hour.jpeg)
 
-
+1. Common business hour for most gym is around 80 to 100 hours per week
+2. Business hour ranges from 7 hour per week to 24/7
+2. Based on the 60 gym collected, longer business hour (>100 hr) doesn't necessary guarantee higher review rating, as gym with business hour below 100 hr/week have average rating over 4.
 
 
 ### Limitations
