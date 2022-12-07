@@ -42,56 +42,62 @@ If you collect Google place ids now, you may get slightly different data sets fr
 * Other outputs are under the store directory in the artifacts
 * We used pandas package to read and write csv files 
 
-**1. Word count Analysis(wordcount.py)**
-- Reading: Read review.csv from Outscraper in the directory
-- Dividing: Used **NLTK.tokenizer** package to break reviews down into separate words
-- Cleaning: Excluded stopwords and additional stopwords from divided words (function:tokenized_without_stopwords.py)
+**1. Word Count Analysis (wordcount.py)**
+
+- Read review.csv from Outscraper in the directory
+- Used **NLTK.tokenizer** package to break reviews down into separate words
+- Excluded stopwords and additional stopwords and cleaned the data (function:tokenized_without_stopwords.py)
     * stopwords are in the stopwords.txt of the data directory, which we retrieved from the Shakespeare homework
-    * additional stop words in the additional_stop_words.txt include extra words that we added such as emojis and foreign languages.
-- Getting: getting data for this analysis
+    * additional stop words in the additional_stop_words.txt include extra words that we added such as emojis and foreign languages
+- CSV files are produced as output
 
-**1.1 All word count(all count)**
-- Counting: the frequency of words in the all reviews dataset
-- Output: This result is in the "all count.csv" in the artifacts
+**1.1 All word count (all_count.csv)**
+- Count the frequency of all words in the all reviews dataset
+- Output is the "all_count.csv" in the artifacts directory
 
-**1.2 Word count by each places(count_each_place.py)**
-- Counting all of the frequency of words by each places in the all reviews dataset
+**1.2 Word count by each gym (count_each_place.py)**
+- Count the frequency of all words by each gym in the all reviews dataset
 - Output: This result is in the "countall count.csv" in the store
 
-**1.3 Word count by each genders(count_each_gender.py)  with *gender guesser* package**
-- Counting all of the frequency of words by each places in the all reviews dataset
-- Output: This result is in the "review_data.csv" in the store
+**1.3 Word count by each genders (count_each_gender.py)  with *gender-guesser* package**
+- Count the frequency of all words by each gym by gender in the all reviews dataset
+- Output is the "review_data.csv" in the store
 
-* What is th gender guesser
-    - It is the package to estimate gender from last name.
-    - We plug last name of each reviwer's name(author title in the review.csv) into gender guesser function
-    - This funtion retuns 5 answers from last name, unknown (name not found), andy (androgynous), male, female, mostly_male, or mostly_female
-    - The difference between andy and unknown is that the former is found to have the same probability to be male than to be female, while the later means that the name wasn’t found in the gender guesser's database.
+* What is the Gender-Guesser package?
+    - Python package to guess gender based on the first names provided
+    - We plug the first name of each reviwer's name(author title in review.csv) into gender guesser function
+    - This funtion retuns six different values: unknown (name not found), andy (androgynous/unisex), male, female, mostly_male, or mostly_female
+    - The difference between andy and unknown is that the former is found to have the same probability of being male name as female name(unisex), while the latter means that the name wasn’t found in the gender-guesser's database.
 
 [Packages]
-* NLTK: https://www.nltk.org/index.html
-* gender guesser: https://pypi.org/project/gender-guesser/
+* NLTK (Natural Language Toolkit) : https://www.nltk.org/index.html
+* gender-guesser: https://pypi.org/project/gender-guesser/
 
 **2. Sentiment Analysis(sentiment.py)**
 
 **2.1 Sentiment score by each reviews(sentiment_analysis.py)**
-- Reading: Read review.csv from Outscraper in the directory
-- Scoring: Putting each reviews into the function **SentimentIntensityAnalyzer of NLTK Vader** package to get scores(Positive/Negative/Neutral/Compound)
-- Output: This result is in the "sentimental_data.csv" in the store
-    * Positive: positive word's score by each reviews
-    * Negative: negative word's score by each reviews
-    * Netural : netutral word's score by each reviews
-    * Compound: compound score by each reviews
+
+**NLTK.Vader (Valence Aware Dictionary for Sentiment Reasoning)**
+- Popular Natural Language Processing tool that identifies and extracts sentiment behind texts.
+- Analyzes lexicon, grammatical rules, syntactical conventions to calculate sentiment scores.
+
+- Read review.csv from Outscraper in the directory
+- Put the reviews into the function **SentimentIntensityAnalyzer of NLTK Vader** package to get sentiment scores (Positive/Negative/Neutral/Compound)
+- Output is "sentimental_data.csv" in the store directory that contains below scores:
+    * Positive
+    * Negative
+    * Netural
+    * Compound: Sum of positive, negative and neutral scores, normalized between -1(most extreme negative) and +1 (most extreme positive)
 
 **2.2 Mean and Standard Deviation of sentiment scores by each places**
-- Mean/Standard Deviation: We also got the mean and the standard deviation of these scores by *each places*
-- Output: This result is in the "senti_plus_count_basic" in the artifacts with being integrated with other results
+- We also get the mean and the standard deviation of these scores by *each places*
+- Output is the "senti_plus_count_basic" in the artifacts, which is integrated with other results
 
-**2.3 CreatingReview_r**
+**2.3 Creating Reviewer_r.csv**
 - The sentment.py includes after reading reviews.csv, we create **review_r.csv** added to gender guesser from author title in the reveiw.csv.
 
 [Packages]
-* NLTK: https://www.nltk.org/_modules/nltk/sentiment/vader.html
+* NLTK.Vader: https://www.nltk.org/_modules/nltk/sentiment/vader.html
 
 [Database and Figures]
 
