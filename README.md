@@ -183,8 +183,9 @@ Lastly, we were curious to see if there are any interesting relationships betwee
 
 ### Limitations
 
--   As mentioned previously, if one were to scrape gym review data with Outscraper now, the resulting data may be slightly different from ours because of place ids.
 -   We were only able to scrape 60 gyms. If we wanted more, we were required to apply and pay for a business license to retrieve more data.
+-   As mentioned previously, if one were to scrape gym review data with Outscraper now, the resulting data may be slightly different from ours because of place ids. Therefore, although we got 60 gyms, the results "senti_plus_count_basic.csv" and "count_each.csv" have only 41 places(reviews of some places are missing)
+-   However, "all count.csv" is counted based on 60 gyms that was collected at November.
 -   The gyms we collected data on have Google review ratings from 3.5 to 5. So, gyms with terrible to sub-par reviews (1 to 3) are not included.
 -   Google Map API selected gyms based on the searcher's location. That may have caused most of the gyms on our data to be around downtown area.
 -   Membership fees, which may be an interesting finding, was not included in our analysis because it would require a much more in-depth and complicated data collection/scraping.
