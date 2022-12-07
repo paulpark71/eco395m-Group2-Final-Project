@@ -42,6 +42,7 @@ If you collect Google place ids now, you may get slightly different data sets fr
 * Other outputs are under the store directory in the artifacts
 * We used pandas package to read and write csv files 
 
+
 **1. Word Count Analysis (wordcount.py)**
 
 - Read review.csv from Outscraper in the directory
@@ -51,17 +52,19 @@ If you collect Google place ids now, you may get slightly different data sets fr
     * additional stop words in the additional_stop_words.txt include extra words that we added such as emojis and foreign languages
 - CSV files are produced as output
 
+
 **1.1 All word count (all_count.csv)**
 - Count the frequency of all words in the all reviews dataset
 - Output is the "all_count.csv" in the artifacts directory
 
 **1.2 Word count by each gym (count_each_place.py)**
 - Count the frequency of all words by each gym in the all reviews dataset
-- Output: This result is in the "countall count.csv" in the store
+- Output: This result is in the "count_plus_basic.csv" in the store (integrated with basic.csv)
 
 **1.3 Word count by each genders (count_each_gender.py)  with *gender-guesser* package**
 - Count the frequency of all words by each gym by gender in the all reviews dataset
-- Output is the "review_data.csv" in the store
+- Output: This result is included in the "all_coun.csv" in the artifacts
+
 
 * What is the Gender-Guesser package?
     - Python package to guess gender based on the first names provided
