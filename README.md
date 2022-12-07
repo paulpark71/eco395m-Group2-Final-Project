@@ -204,7 +204,7 @@ Lastly, we were curious to see if there are any interesting relationships betwee
 ### Reproducibility
 - Set the current directory to the top of the repo (same place where this README.md is located).
 - Before executing the code, install requirement.txt or packages if you do not have them already, by running "pip3 install -r requirements.txt"
-- Also, we should pluged your Google Map API key " into "googlemap.py" in the "/code/children".
+- Also, we should pluged your Google Map API key " into variable "key" of googlemap.py in the "/code/children".
 - Open the main.py under the directory of the code and execute it. (main.py executes these python files automatically: 1. googlemap, 2. wordcount, 3. sentiment, which have some functions in the functions directory)
 - After running the above code, you can get three main csv files(all_count, reviewer_r, senti_plus_count_basic) in the artifacts directory.
 
