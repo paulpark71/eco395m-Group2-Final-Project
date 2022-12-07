@@ -2,35 +2,38 @@
 
 ## Goal
 
-The main goal of our project is to analyze reviews of different gyms in Austin. Although our beloved Gregory gym on campus is a phenomenal place to work out, sadly we can no longer use it once we graduate from this program. So we thought it would be a cool idea to use some of the tehnologies we learned in class and also some new ones to see which gyms in Austin (especially Travis County) have good reviews and also explore various characteristics that make a good gym (that people love). We use tools suchs such but not limited to, Google Places API, Natural Language Processing (NLP), sentiment analysis, and Tableau.
+The main goal of our project is to analyze reviews of different gyms in Austin. Although our beloved Gregory gym on campus is a phenomenal place to work out, sadly we can no longer use it once we graduate from this program. So we thought it would be a cool idea to use some of the tehnologies we learned in class and also some new ones to see which gyms in Austin (especially Travis County) have good reviews and also explore various characteristics that make a good gym (that people love). We use tools suchs such but not limited to, Google Map API, Outscraper, Natural Language Processing (NLP), sentiment analysis, and Tableau.
 
 
 ## Data
 
 ### Sources / Collection Methods
 
-We collected gym data and their Google reviews using 1."Google Places API" and 2."Outscraper".
+We collected gym data and their Google reviews using 1."Google Map API" and 2."Outscraper".
 
-**1. Google Map API(googlemap.py)**
+**1. Google Map API (googlemap.py)**
 - First, before using Google Map API, we go to the Google Cloud Platform and make valid Googe Map API to get its API key
-- Insert google api key and query(search words:"**gym near Travis County, TX**") into the googlemap.py
-- A. Scrape 60 gym data(**google place id, name, address, latitude, longitude, rating, rating_total**.) from Google Map API(function:get_information_map)
-- B. Getting details gyms data and calculated business hour that we need to analyze(**weekday, Total Business hour**) from Google Map API(function: detail,calculate_hour)
-- Create csv fies(result_place_id.csv, result_detail.csv) that includes A and B above and Intergrate them into **basic.csv** in the store directory
+- Insert Google API key and query(search words:"**gym near Travis County, TX**") into googlemap.py
+- A) Scrape 60 gym data (**google place id, name, address, latitude, longitude, rating, rating_total**) from Google Map API(function: get_information_map)
+- B) Collect details of gyms data and calculated business hours for our analysis (**weekday, Total Business hour**) from Google Map API (function: detail,calculate_hour)
+- Create csv files (result_place_id.csv, result_detail.csv) that contain A and B above and Intergrate them into **basic.csv** in the store directory
 
 
 **2. Google Review Data (from Outscraper Website/API)**
-- Outscraper(https://outscraper.com/) is the website we used get reivews datafrom Google Maps (you can also use their API).
-- We plugged in google place id that we collected from Google Places API into Outscraper and was able to collect reviews of each gyms up to 250 recent reviews (**reviews.csv in the data directory **).
-    - We resorted to using Outscraper because Google Places API only allowed us to scrape up to five reviews per location as an individual(non-buseinss) user.
+- Outscraper(https://outscraper.com/) is the website we used get reivews data from Google Maps (you can also use their API).
+- We plugged in google place id that we collected from Google Map API into Outscraper and was able to collect reviews of each gyms up to 250 recent reviews (**reviews.csv in the data directory **).
+    - We resorted to using Outscraper because Google Map API only allowed us to scrape up to five reviews per location as an individual(non-buseinss) user.
     - Using Outscraper allowed us to scrape up to 250 reviews per gym at an affordable cost.
-    - We got data that includes **reviews, author_title(reviewr's name) and etc.**(we used these two items in this )
+    - We got data that includes **reviews, author_title(reviewr's name), etc.**
+
 <p align="center">
 <img width="400" height="400" src="data/outscraper.PNG"> <br>
-We placed Google place id into outscraper to get up to 250 reviews
+We placed Google place ids into outscraper to retrieve the reviews
 </p>
 
-* Caution!: We got reviews.csv at the end of November based on the Google place id at that time. And, the Google place ids that we can now get are a little different from ones that we got at November. 
+* Note: We produced reviews.csv at the end of November based on the Google place ids we collected at that time. 
+If you collect Google place ids now, you may get slightly different data sets from what we have.
+
 
 ## Analysis
 
@@ -41,10 +44,10 @@ We placed Google place id into outscraper to get up to 250 reviews
 
 **1. Word count Analysis(wordcount.py)**
 - Reading: Read review.csv from Outscraper in the directory
-- Dividen: Used **NLTK.tokenizer** package to divide each reviews into each words
-- Cleaning: Excluded stopwords and additional stopwords from dividen words(function:tokenized_without_stopwords.py)
-    * stopwords is words in the stopwords.txt of the data directory and it is the same as stuff of shakespire homework
-    * additional stop words in the additional_stop_words.txt that we added some words for this analysis
+- Dividing: Used **NLTK.tokenizer** package to break reviews down into separate words
+- Cleaning: Excluded stopwords and additional stopwords from divided words (function:tokenized_without_stopwords.py)
+    * stopwords are in the stopwords.txt of the data directory, which we retrieved from the Shakespeare homework
+    * additional stop words in the additional_stop_words.txt include extra words that we added such as emojis and foreign languages.
 - Getting: getting data for this analysis
 
 **1.1 All word count(all count)**
@@ -179,7 +182,7 @@ we can see the two scores positively correlated. higher compound mean likely to 
 
 -   We were only able to scrape 60 gyms. If we wanted more, we were required to apply and pay for a business license to retrieve more data.
 -   The gyms we collected data on have Google review ratings from 3.5 to 5. So, gyms with terrible to sub-par reviews (1 to 3) are not included.
--   Google Places API selected gyms based on the searcher's location. That may have caused most of the gyms on our data to be around down town area.
+-   Google Map API selected gyms based on the searcher's location. That may have caused most of the gyms on our data to be around down town area.
 -   Membership fees, which may be an interesting finding, was not included in our analysis because it would require a much more in-depth and complicated data collection/scraping.
 -   Regarding gender ratio analysis – we have some unknown gender names. Unisex names may have been mis-categorized.
 -   Although some gyms had more than 250 reviews, the version of the Outscraper we utilized was capped at 250. This may have produced incomplete review data.
