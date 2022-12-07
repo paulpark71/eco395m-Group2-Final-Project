@@ -5,7 +5,7 @@ from .functions.get_information_map import get_information_map
 from .functions.detail import detail
 
 query = "gym near Travis County, TX"
-key = "AIzaSyCebdSDtlBnNy38SGG2G8lXD1VNycLP5aQ"
+key = ""
 BASE_DIR = "artifacts"
 
 
