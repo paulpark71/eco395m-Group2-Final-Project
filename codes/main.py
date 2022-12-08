@@ -1,7 +1,7 @@
 """'
     This file is only for executing all python codes for analysis
 """
-
+exit()
 print("Now Getting Google Map Data")
 from children import googlemap
 

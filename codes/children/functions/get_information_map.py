@@ -4,8 +4,6 @@ import json
 import time
 
 
-
-
 def get_information_map(query, key):
     """
     Input: query and the key of Google Map API
