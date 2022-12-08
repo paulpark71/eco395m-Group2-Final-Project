@@ -206,4 +206,5 @@ Lastly, we were curious to see if there are any interesting relationships betwee
 - Also, we should pluged your Google Map API key into variable "key" of googlemap.py in the "/code/children".
 - Open the main.py under the directory of the code and execute it. (main.py executes these python files automatically: 1. googlemap, 2. wordcount, 3. sentiment, which have some functions in the functions directory)
 - After running the above code, you can get three main csv files(all_count, reviewer_r, senti_plus_count_basic) in the artifacts directory.
+- Copy the two SQL scripts 'Creat_allcount.sql' and 'create_basic_csv.sql' in Setup directory into DBeaver to create tables, from which you can generate plots included in our report.
 
