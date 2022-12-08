@@ -1,7 +1,7 @@
 import pandas as pd
 import os
-from functions.tokenized_without_stopwords import tokenized_without_stopwords
-from functions.count_each_gender import all_count, count_each_place, count_each_gender
+from .functions.tokenized_without_stopwords import tokenized_without_stopwords
+from .functions.count_each_gender import all_count, count_each_place, count_each_gender
 
 
 """

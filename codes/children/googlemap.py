@@ -5,7 +5,7 @@ from .functions.get_information_map import get_information_map
 from .functions.detail import detail
 
 query = "gym near Travis County, TX"
-key = ""
+key = "AIzaSyCebdSDtlBnNy38SGG2G8lXD1VNycLP5aQ"
 BASE_DIR = "artifacts"
 
 os.makedirs(BASE_DIR, exist_ok=True)
